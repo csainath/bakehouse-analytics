@@ -1,0 +1,18 @@
+resources:
+  pipelines:
+    bakehouse_project_combined_pipeline:
+      name: "[${bundle.target}] Bakehouse Project Combined Pipeline"
+      catalog: ${var.catalog}
+      target: ${var.schema}
+      root_path: ../src/project_combined
+      libraries:
+        - glob:
+            include: ../src/project_combined/transformations/**
+      serverless: true
+      continuous: false
+      development: true
+      photon: true
+      channel: current
+      permissions:
+        - level: CAN_VIEW
+          group_name: "users"

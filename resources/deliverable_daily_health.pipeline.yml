@@ -1,0 +1,18 @@
+resources:
+  pipelines:
+    bakehouse_daily_franchise_health_pipeline:
+      name: "[${bundle.target}] Bakehouse Daily Franchise Health Pipeline"
+      catalog: ${var.catalog}
+      target: ${var.schema}
+      root_path: ../src/deliverables/daily_franchise_health
+      libraries:
+        - glob:
+            include: ../src/deliverables/daily_franchise_health/transformations/**
+      serverless: true
+      continuous: false
+      development: true
+      photon: true
+      channel: current
+      permissions:
+        - level: CAN_VIEW
+          group_name: "users"

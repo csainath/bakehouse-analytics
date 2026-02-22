@@ -1,0 +1,29 @@
+bundle:
+  name: bakehouse-analytics
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    default: "projects"
+  schema:
+    default: "bakehouse_analytics"
+
+targets:
+  dev:
+    default: true
+    mode: development
+    workspace:
+      host: https://dbc-165583b9-7be4.cloud.databricks.com
+    variables:
+      catalog: "projects"
+      schema: "bakehouse_analytics"
+
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-165583b9-7be4.cloud.databricks.com
+    variables:
+      catalog: "projects"
+      schema: "bakehouse_analytics"

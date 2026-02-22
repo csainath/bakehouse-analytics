@@ -1,0 +1,18 @@
+resources:
+  pipelines:
+    bakehouse_supplier_risk_pipeline:
+      name: "[${bundle.target}] Bakehouse Supplier Risk Pipeline"
+      catalog: ${var.catalog}
+      target: ${var.schema}
+      root_path: ../src/deliverables/supplier_risk
+      libraries:
+        - glob:
+            include: ../src/deliverables/supplier_risk/transformations/**
+      serverless: true
+      continuous: false
+      development: true
+      photon: true
+      channel: current
+      permissions:
+        - level: CAN_VIEW
+          group_name: "users"

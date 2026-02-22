@@ -1,0 +1,18 @@
+resources:
+  pipelines:
+    bakehouse_customer_360_pipeline:
+      name: "[${bundle.target}] Bakehouse Customer 360 Pipeline"
+      catalog: ${var.catalog}
+      target: ${var.schema}
+      root_path: ../src/deliverables/customer_360
+      libraries:
+        - glob:
+            include: ../src/deliverables/customer_360/transformations/**
+      serverless: true
+      continuous: false
+      development: true
+      photon: true
+      channel: current
+      permissions:
+        - level: CAN_VIEW
+          group_name: "users"

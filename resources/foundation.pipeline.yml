@@ -1,0 +1,18 @@
+resources:
+  pipelines:
+    bakehouse_foundation_pipeline:
+      name: "[${bundle.target}] Bakehouse Foundation Pipeline"
+      catalog: ${var.catalog}
+      target: ${var.schema}
+      root_path: ../src/foundation
+      libraries:
+        - glob:
+            include: ../src/foundation/transformations/**
+      serverless: true
+      continuous: false
+      development: true
+      photon: true
+      channel: current
+      permissions:
+        - level: CAN_VIEW
+          group_name: "users"

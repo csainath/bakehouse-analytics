@@ -1,0 +1,18 @@
+resources:
+  pipelines:
+    bakehouse_sentiment_trends_pipeline:
+      name: "[${bundle.target}] Bakehouse Sentiment Trends Pipeline"
+      catalog: ${var.catalog}
+      target: ${var.schema}
+      root_path: ../src/deliverables/sentiment_trends
+      libraries:
+        - glob:
+            include: ../src/deliverables/sentiment_trends/transformations/**
+      serverless: true
+      continuous: false
+      development: true
+      photon: true
+      channel: current
+      permissions:
+        - level: CAN_VIEW
+          group_name: "users"
