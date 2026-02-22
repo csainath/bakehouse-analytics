@@ -25,6 +25,15 @@ Databricks Lakehouse project implementing the Bakehouse technical specification 
 5. `bakehouse_sentiment_trends_pipeline`
 6. `bakehouse_project_combined_pipeline`
 
+## Embedded Pipeline Tests
+Each pipeline includes embedded data-quality test views that execute as part of the same pipeline run:
+- Foundation: `silver_test_foundation_quality`
+- Daily Health: `gold_test_daily_franchise_health_quality`
+- Customer 360: `gold_test_customer_360_quality`
+- Supplier Risk: `gold_test_supplier_risk_quality`
+- Sentiment Trends: `gold_test_sentiment_trends_quality`
+- Project Combined: `gold_test_project_combined_quality`
+
 ## Deployment
 ```bash
 databricks bundle validate

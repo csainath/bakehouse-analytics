@@ -19,3 +19,11 @@
 - Deliverable 3 pipeline: `gold_supplier_risk_matrix`
 - Deliverable 4 pipeline: `gold_store_sentiment_trends`
 - Project pipeline: `gold_bakehouse_project_scorecard` (combines all deliverables)
+
+## Embedded Test Views
+- `silver_test_foundation_quality`
+- `gold_test_daily_franchise_health_quality`
+- `gold_test_customer_360_quality`
+- `gold_test_supplier_risk_quality`
+- `gold_test_sentiment_trends_quality`
+- `gold_test_project_combined_quality`
