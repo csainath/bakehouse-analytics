@@ -221,7 +221,6 @@ def recursive_forecast(best_model, panel_df, min_date, max_date, model_name):
                     "forecast_date": forecast_date,
                     "predicted_daily_revenue": pred_value,
                     "model_name": model_name,
-                    "forecast_horizon_day": step,
                 }
             )
 
